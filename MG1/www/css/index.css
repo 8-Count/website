@@ -1,0 +1,45 @@
+html, body, h1, h2, h3, h4, ul, ol, li, p, a {
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+body {
+    padding: 15;
+    background-color: #EEEEEE;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, .timeTicker {
+    font-family: "Segoe UI"; font-weight: lighter;
+    color: #333333;
+}
+
+h1 {
+    font-size: 4.5em;
+    margin-bottom: -.2em;
+}
+
+h2, a {
+    font-size: 1.4em;
+}
+
+.riskMeter {
+    margin-bottom: 1em;
+}
+
+.timeTicker {
+    margin-top: 1.4em;
+    font-size: 1.15em;
+}
+
+.impactHistoryButton {
+    text-shadow: none;
+    padding: .8em 1em;
+    background: #333333;
+    color: #EEE;
+    text-decoration: none;
+}
+
+.impactHistoryButton:active {
+    background: #999999;
+}
