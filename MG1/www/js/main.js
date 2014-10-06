@@ -3,6 +3,7 @@
 /********************************************/
 
 $(document).ready(function() {
+    impactOccurred(20);
     updateTimeElapsed();
     updateRiskMeter();
     setInterval(updateTimeElapsed, 999);
