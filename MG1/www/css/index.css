@@ -9,7 +9,7 @@ body {
     background-color: #EEEEEE;
 }
 
-h1, h2, h3, h4, h5, h6, p, a, .timeTicker {
+h1, h2, h3, h4, h5, h6, p, a, .timeTicker, button {
     font-family: "Segoe UI"; font-weight: lighter;
     color: #333333;
 }
@@ -19,8 +19,12 @@ h1 {
     margin-bottom: -.2em;
 }
 
-h2, a {
+h2, a, button {
     font-size: 1.4em;
+}
+
+button {
+    border: 0;
 }
 
 .riskMeter {
@@ -34,14 +38,32 @@ h2, a {
     font-size: 1.15em;
 }
 
-.impactHistoryButton {
+.viewImpactHistoryButton, button {
     text-shadow: none;
     padding: .8em 1em;
+    margin-top: .5em;
     background: #333333;
     color: #EEE;
     text-decoration: none;
 }
 
-.impactHistoryButton:active {
+.viewImpactHistoryButton:active {
+    background: #999999;
+}
+
+.container {
+    display: table;
+    table-layout: auto;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.row {
+    display: table-row;
+}
+
+button:active {
     background: #999999;
 }

@@ -21,20 +21,27 @@
                 <canvas class="riskMeter"></canvas> 
             </div>
             
-            <!-- the button that lets users view their cumulative concussion risk -->
-            <a class="impactHistoryButton" href="historypage.html">View Impact History</a> 
-            
-            <!-- the text that displays when the last impact occurred -->
-            <div class="timeTicker" id="ticker">No impact has occurred</div>
-            
-            <!-- @TODO: Add a "ignore last impact" button 
-                so that users can manually cancel non-impacts 
-                (misread by sensor, mouthguard falling on floor, etc.).
-                This will allow innacurate measurements to be not included
-                in the impact history graph. -->
-            
-            <!-- @TODO: Add a visual 'heartbeat' that indicates to the user that impacts
-                are correctly being monitored. -->
+            <div class="container">
+                <!-- the button that lets users view their cumulative concussion risk -->
+                <div class="row">
+                    <a id="viewImpactHistoryButton" class="viewImpactHistoryButton" 
+                       href="historypage.html">View Impact History</a> 
+                </div>
+                
+                <!-- the text that displays when the last impact occurred -->
+                <div class="row">
+                    <div class="timeTicker" id="ticker">No impact has occurred</div>
+                </div>
+                
+                <!-- the button that lets users ignore a faulty sensor reading -->
+                <div class="row">
+                    <button onclick="deleteLastImpactButtonClick()" id="deleteLastImpactButton" 
+                            class="deleteLastImpactButton">Delete Last Impact</button>
+                </div>
+
+                <!-- @TODO: Add a visual 'heartbeat' that indicates to the user that impacts
+                    are correctly being monitored. -->
+            </div>
         </div>
     </body>
 </html>

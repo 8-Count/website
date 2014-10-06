@@ -119,3 +119,11 @@ function resetImpactHistory() {
     updateTimeElapsed();
     updateRiskMeter();
 }
+
+function deleteLastImpactButtonClick() {
+    var impactHistory = getImpactHistory();
+    impactHistory.pop();
+    setImpactHistory(impactHistory);
+    updateTimeElapsed();
+    updateRiskMeter();
+}
