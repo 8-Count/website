@@ -35,10 +35,11 @@ button {
 
 .timeTicker {
     margin-top: 1.4em;
-    font-size: 1.15em;
+    font-size: 1.12em;
 }
 
 .viewImpactHistoryButton, button {
+    border: 0;
     text-shadow: none;
     padding: .8em 1em;
     margin-top: .5em;

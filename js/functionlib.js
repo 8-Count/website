@@ -63,7 +63,7 @@ function updateTimeElapsed() {
     
     if (lastImpact !== null) {
         var timeElapsedInSeconds = Math.floor((new Date() - Date.parse(lastImpact.date)) / 1000);
-        ticker.innerHTML = "Last impact occurred " + timeElapsedInSeconds + " seconds ago";    
+        ticker.innerHTML = "Last impact was " + timeElapsedInSeconds + " seconds ago";    
     } 
     else {
         ticker.innerHTML = "No impact has occurred";
@@ -84,11 +84,11 @@ function updateRiskMeter() {
         percentage: percentConcussion,
         fontFamily: "Segoe UI",
         speed: 10,
-        width: 380,
-        height: 250,
+        width: getUIElementScaler() * 1.2,
+        height: getUIElementScaler() * 1.2,
         fontSize: '3.3em',
         animate: true,
-        diameter: 100,
+        diameter: getUIElementScaler() / 2.1,
         fontColor: 'rgba(51,51,51,1)',
         lineColor: 'rgba(51,51,51,1)',
         remainingLineColor: 'rgba(0,0,0,0.2)',
@@ -120,10 +120,26 @@ function resetImpactHistory() {
     updateRiskMeter();
 }
 
+/**
+ * The event handler for when the 'delete last impact'
+ * button is pressed.
+ * This removes the most recent impact and refreshes
+ * the GUI.
+ * This can be called multiple times in a row.
+ */
 function deleteLastImpactButtonClick() {
     var impactHistory = getImpactHistory();
     impactHistory.pop();
     setImpactHistory(impactHistory);
     updateTimeElapsed();
     updateRiskMeter();
+}
+
+/**
+ * Returns a scalar that indicates the size of the screen.
+ * This will help the page scale.
+ * Hopefully this isn't bad practice.
+ */
+function getUIElementScaler() {
+    return $("#viewImpactHistoryButton").width();
 }
