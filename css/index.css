@@ -4,19 +4,26 @@ html, body, h1, h2, h3, h4, ul, ol, li, p, a {
     margin: 0;
 }
 
-body {
-    padding: 15;
-    background-color: #EEEEEE;
-}
-
 h1, h2, h3, h4, h5, h6, p, a, .timeTicker, button {
     font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
     font-weight: lighter;
     color: #333333;
 }
 
+html {
+    font-size: 16px;
+    background-color: #EEEEEE;
+}
+
+body {
+    font-size: 62.5%;
+    color: #333333;
+    padding: 15;
+    text-align: center;
+}
+
 h1 {
-    font-size: 3.9em;
+    font-size: 3em;
     margin-bottom: -.2em;
 }
 
@@ -24,61 +31,66 @@ h2, a, button {
     font-size: 1.2em;
 }
 
+.riskMeter {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.timeTicker {
+    margin-top: .2em;
+    font-size: 1.12em;
+    margin-bottom: .2em;
+}
+
 button {
     border: 0;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: .8em 1em;
+    background: #333333;
+    color: #EEE;
+    text-decoration: none;
 }
 
 button:active {
     background: #999999;
 }
 
-.riskMeter {
-    margin-bottom: 1em;
-    margin-left: -5em;
-    margin-right: -5em;
-}
-
-.timeTicker {
-    margin-top: 1.4em;
-    font-size: 1.12em;
-}
-
-.viewImpactHistoryButton, button {
-    border: 0;
-    text-shadow: none;
-    padding: .8em 1em;
-    margin-top: .5em;
-    background: #333333;
-    color: #EEE;
-    text-decoration: none;
-}
-
-.viewImpactHistoryButton:active {
-    background: #999999;
-}
-
-.container {
-    text-align:center;
-    display: table;
-    width: 100%;
-}
-
-.row {
-    display: table-row;
-}
-
 .historyChart{
-    position: fixed;
-    left: 50%;
-    transform: translate(-52%);
     margin-top: 1em;
     display: block;
     height: 40vh;
-    width: 95vw;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .historyChartContent {
     width: 100%;
     height: 100%;
-    text-align: center;
+    padding-bottom: 40vh;
+}
+
+.styledSelect {
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 240px;
+    height: 100%;
+    overflow: hidden;
+    background: url(../images/new_arrow.jpg) no-repeat right #ccc;
+    border: 1px solid #aaa;
+}
+
+.styledSelect select {
+    background: transparent;
+    width: 220px;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    -webkit-appearance: none;
 }

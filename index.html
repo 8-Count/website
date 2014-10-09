@@ -14,36 +14,22 @@
         <script src="js/main.js"></script>
     </head>
     <body>
-        <div class="container">
-            <h1>8 Count</h1>
-			<h2>Last Impact Concussion Risk</h2>
-                
-            <div class="container">
-                <!-- the progress bar -->
-                <div class="row">
-                    <canvas class="riskMeter"></canvas>
-                </div>
-                
-                <!-- the button that lets users view their cumulative concussion risk -->
-                <div class="row">
-                    <a id="viewImpactHistoryButton" class="viewImpactHistoryButton" 
-                       href="historypage.html">View Impact History</a> 
-                </div>
-                
-                <!-- the text that displays when the last impact occurred -->
-                <div class="row">
-                    <div class="timeTicker" id="ticker">No impact has occurred</div>
-                </div>
-                
-                <!-- the button that lets users ignore a faulty sensor reading -->
-                <div class="row">
-                    <button onclick="deleteLastImpactButtonClick()" id="deleteLastImpactButton" 
-                            class="deleteLastImpactButton">Delete Last Impact</button>
-                </div>
+        <h1>8 Count</h1>
+        <h2>Last Impact Concussion Risk</h2>
 
-                <!-- @TODO: Add a visual 'heartbeat' that indicates to the user that impacts
-                    are correctly being monitored. -->
-            </div>
-        </div>
+        <!-- the meter that displays the risk of concussions -->
+        <canvas class="riskMeter"></canvas>
+
+        <!-- the button that lets users view their cumulative concussion risk -->
+        <button onClick="viewImpactHistoryButtonClick()" id="viewImpactHistoryButton">View Impact History</button>
+
+        <!-- the text that displays when the last impact occurred -->
+        <div class="timeTicker" id="ticker">No impact has occurred</div>    
+
+        <!-- the button that lets users ignore a faulty sensor reading -->
+        <button onclick="deleteLastImpactButtonClick()" id="deleteLastImpactButton">Delete Last Impact</button>
+
+        <!-- @TODO: Add a visual 'heartbeat' that indicates to the user that impacts
+            are correctly being monitored. -->
     </body>
 </html>

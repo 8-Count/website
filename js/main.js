@@ -6,7 +6,4 @@ $(document).ready(function() {
     updateTimeElapsed();
     updateRiskMeter();
     setInterval(updateTimeElapsed, 999);
-    $("#deleteLastImpactButton").width(getUIElementScaler());
 });
-
-

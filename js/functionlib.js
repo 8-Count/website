@@ -84,11 +84,11 @@ function updateRiskMeter() {
         percentage: percentConcussion,
         fontFamily: "Segoe UI",
         speed: 10,
-        width: getUIElementScaler() * 1.2,
-        height: getUIElementScaler() * 1.2,
+        width: 200,
+        height: 200,
         fontSize: '3.3em',
         animate: true,
-        diameter: getUIElementScaler() / 2.1,
+        diameter: 70,
         fontColor: 'rgba(51,51,51,1)',
         lineColor: 'rgba(51,51,51,1)',
         remainingLineColor: 'rgba(0,0,0,0.2)',
@@ -136,10 +136,10 @@ function deleteLastImpactButtonClick() {
 }
 
 /**
- * Returns a scalar that indicates the size of the screen.
- * This will help the page scale.
- * Hopefully this isn't bad practice.
+ * The event handler for when the 'view impact history'
+ * button is pressed.
+ * This navigates to the impact history page.
  */
-function getUIElementScaler() {
-    return $("#viewImpactHistoryButton").width();
+function viewImpactHistoryButtonClick() {
+    window.location.href = "historyPage.html";
 }
