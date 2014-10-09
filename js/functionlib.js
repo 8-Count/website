@@ -86,7 +86,7 @@ function updateRiskMeter() {
         speed: 10,
         width: 200,
         height: 200,
-        fontSize: '3.3em',
+        fontSize: '3.9em',
         animate: true,
         diameter: 70,
         fontColor: 'rgba(51,51,51,1)',

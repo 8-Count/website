@@ -20,15 +20,16 @@ body {
     color: #333333;
     padding: 15;
     text-align: center;
+    margin: 1em;
 }
 
 h1 {
-    font-size: 3em;
+    font-size: 4.5em;
     margin-bottom: -.2em;
 }
 
 h2, a, button {
-    font-size: 1.2em;
+    font-size: 1.6em;
 }
 
 .riskMeter {
@@ -39,7 +40,7 @@ h2, a, button {
 
 .timeTicker {
     margin-top: .2em;
-    font-size: 1.12em;
+    font-size: 1.26em;
     margin-bottom: .2em;
 }
 
