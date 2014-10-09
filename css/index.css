@@ -75,23 +75,22 @@ button:active {
 
 .styledSelect {
     margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 240px;
+    margin-left: 10%;
+    margin-right: 10%;
     height: 100%;
     overflow: hidden;
     background: url(../images/new_arrow.jpg) no-repeat right #ccc;
-    border: 1px solid #aaa;
+    border: 2px solid #aaa;
 }
 
 .styledSelect select {
     background: transparent;
-    width: 220px;
-    padding: 5px;
-    font-size: 16px;
+    padding-left: 50%;
+    padding-right: 50%;
+    font-size: 1.6em;
     line-height: 1;
     border: 0;
     border-radius: 0;
-    height: 34px;
+    height: 2.5em;
     -webkit-appearance: none;
 }
