@@ -10,7 +10,8 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p, a, .timeTicker, button {
-    font-family: "Segoe UI"; font-weight: lighter;
+    font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+    font-weight: lighter;
     color: #333333;
 }
 
