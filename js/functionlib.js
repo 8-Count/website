@@ -141,5 +141,5 @@ function deleteLastImpactButtonClick() {
  * This navigates to the impact history page.
  */
 function viewImpactHistoryButtonClick() {
-    window.location.href = "historyPage.html";
+    window.location.href = "historypage.html";
 }
