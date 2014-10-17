@@ -1,4 +1,6 @@
 var impactHistoryStorageKey = "impactHistoryData";
+var buttonStage = 0;
+var dateTimeStartedListening;
 
 /**
  * The function called first when a new impact occurs.
@@ -59,55 +61,34 @@ function setImpactHistory(history) {
  * Update the "time since last impact occurred" textblock on index.html.
  **/
 function updateTimeElapsed() {
-    var lastImpact = getLastImpact();
+    var stringToDisplay = "";
     
-    if (lastImpact !== null) {
-        var timeElapsedInSeconds = Math.floor((new Date() - Date.parse(lastImpact.date)) / 1000);
-        ticker.innerHTML = "Last impact was " + timeElapsedInSeconds + " seconds ago";    
-    } 
-    else {
-        ticker.innerHTML = "No impact has occurred";
+    if (connection_timer.visibility == "visible") {
+        stringToDisplay = getTimeToDislay(dateTimeStartedListening);
     }
+    
+    connection_timer.innerHTML = stringToDisplay;
 }
 
 /**
- * Update the UI to show the latest impact on the concussion risk meter on index.html.
+ * Returns the string representation of the time
+ * difference between the current date and the input
+ * parameter.
  **/
-function updateRiskMeter() {
-    var lastImpact = getLastImpact();
-    
-    var percentConcussion = (lastImpact !== null) 
-        ? lastImpact.percentConcussion
-        : 0;
-    
-    $('.riskMeter').delay(800).ClassyLoader({
-        percentage: percentConcussion,
-        fontFamily: "Segoe UI",
-        speed: 10,
-        width: 200,
-        height: 200,
-        fontSize: '3.9em',
-        animate: true,
-        diameter: 70,
-        fontColor: 'rgba(51,51,51,1)',
-        lineColor: 'rgba(51,51,51,1)',
-        remainingLineColor: 'rgba(0,0,0,0.2)',
-        lineWidth: 22
-    });
-}
+function getTimeToDislay(myDate) {
+    date_future = new Date();
+    date_now = myDate;
 
-/**
- * Returns the last impact that occurred.
- * If no impact occurred, this returns null.
- **/
-function getLastImpact() {
-    var impactHistory = getImpactHistory();
-    
-    if (impactHistory.length === 0) {
-        return null;
-    }
-    
-    return impactHistory[impactHistory.length - 1];
+    seconds = Math.floor((date_future - (date_now))/1000);
+    minutes = Math.floor(seconds/60);
+    hours = Math.floor(minutes/60);
+    days = Math.floor(hours/24);
+
+    hours = hours-(days*24);
+    minutes = minutes-(days*24*60)-(hours*60);
+    seconds = seconds-(days*24*60*60)-(hours*60*60)-(minutes*60);
+
+    return hours + ":" + minutes + ":" + seconds;
 }
 
 /**
@@ -120,26 +101,64 @@ function resetImpactHistory() {
     updateRiskMeter();
 }
 
-/**
- * The event handler for when the 'delete last impact'
- * button is pressed.
- * This removes the most recent impact and refreshes
- * the GUI.
- * This can be called multiple times in a row.
- */
-function deleteLastImpactButtonClick() {
-    var impactHistory = getImpactHistory();
-    impactHistory.pop();
-    setImpactHistory(impactHistory);
-    updateTimeElapsed();
-    updateRiskMeter();
+function setConnectionStatus(status) {
+    var connectionIcon;
+    var connectionStatus;
+    
+    if (status === "connected") {
+        connection_timer.visibility = "visible";
+        dateTimeStartedListening = new Date();
+        updateTimeElapsed();
+        connectionIcon = "fa fa-stop fa-5x";
+        connectionStatus = "Listening for dangerous impacts...";  
+    }
+    else {
+        connection_timer.visibility = "hidden";
+        updateTimeElapsed();
+        if (status === "not connected") {
+            connectionIcon = "fa fa-play fa-5x";
+            connectionStatus = "Connect to device";
+        }
+        else if (status === "connecting") {
+            connectionIcon = "fa fa-refresh fa-spin fa-5x";
+            connectionStatus = "Connecting...";
+        }
+        else {
+            connectionIcon = "fa fa-exclamation-circle fa-5x";
+            connectionStatus = "Conection failed. Tap to reconnect";
+        }
+    }
+    
+    connection_icon.className = connectionIcon;
+    connection_status.innerHTML = connectionStatus;  
 }
 
-/**
- * The event handler for when the 'view impact history'
- * button is pressed.
- * This navigates to the impact history page.
- */
-function viewImpactHistoryButtonClick() {
+function connectButtonClicked() {
+    buttonStage++;
+    
+    if (buttonStage % 3 == 0) {
+        setConnectionStatus("not connected");   
+    }
+    else if (buttonStage % 3 == 1) {
+        setConnectionStatus("connecting");
+    }
+    else {
+        setConnectionStatus("connected");
+    }
+}
+
+function backButtonClicked() {
+    window.location.href = "index.html";
+}
+
+function todayClicked() {
+    window.location.href = "historypage.html";
+}
+
+function weekClicked() {
+    window.location.href = "historypage.html";
+}
+
+function allTimeClicked() {
     window.location.href = "historypage.html";
 }

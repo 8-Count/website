@@ -4,6 +4,6 @@
 
 $(document).ready(function() {
     updateTimeElapsed();
-    updateRiskMeter();
     setInterval(updateTimeElapsed, 999);
+    setConnectionStatus("not connected");
 });
