@@ -35,34 +35,32 @@
             </div>
         </nav>
 
-        <div style="margin-top:30px">
-            <div class="container" style="text-align:center">
-                <!--CONNECTION TIMER-->
-                <p id="connection_timer" style="margin-bottom:-4px"></p>
-                
-                <!--CONNECTION STATUS ICON-->
-                <button type="button" onclick="connectButtonClicked()" class="btn-invis" >
-                    <i id="connection_icon" class="fa fa-play fa-5x" style="font-size: 12em"></i>
-                </button>
-                
-                <!--CONNECTION STATUS MESSAGE-->
-                <h3 id="connection_status" style="margin-top:6px">sample connection status</h3>
-            </div>
+        <div class="centered-body">
+            <!--CONNECTION TIMER-->
+            <p id="connection_timer"></p>
+
+            <!--CONNECTION STATUS ICON-->
+            <button type="button" onclick="connectButtonClicked()" class="btn-invis" >
+                <i id="connection_icon" class="fa fa-play fa-5x"></i>
+            </button>
+
+            <!--CONNECTION STATUS MESSAGE-->
+            <h3 id="connection_status">sample connection status</h3>
             
             <!--IMPACT HISTORY DROPDOWN NAV MENU-->
-            <div class="container" style="text-align:center;margin-top:30px">
-                <div class="dropdown" style="display:inline">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" style="font-size:1.5em">
+            <div class="container" id="dropdown_menu_container">
+                <div class="dropdown" id="dropdown_menu">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                         View Impact History
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-                        <li role="presentation" onclick="todayClicked()"><a role="menuitem" tabindex="-1" style="font-size: 1.5em">Today</a></li>
-                        <li role="presentation" onclick="weekClicked()"><a role="menuitem" tabindex="-1" style="font-size: 1.5em">This Week</a></li>
-                        <li role="presentation" onclick="allTimeClicked()"><a role="menuitem" tabindex="-1" style="font-size: 1.5em">All Time</a></li>
+                        <li role="presentation" onclick="todayClicked()"><a role="menuitem" tabindex="-1" class="dropdown-item">Today</a></li>
+                        <li role="presentation" onclick="weekClicked()"><a role="menuitem" tabindex="-1" class="dropdown-item">This Week</a></li>
+                        <li role="presentation" onclick="allTimeClicked()"><a role="menuitem" tabindex="-1" class="dropdown-item">All Time</a></li>
                     </ul>
                 </div>
-            </div> <!-- /container -->
+            </div>
         </div>
 
         <!-- Bootstrap core JavaScript
@@ -72,7 +70,6 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/functionlib.js"></script>
         <script src="js/main.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
         <script src="js/ie10-viewport-bug-workaround.js"></script>
     </body>
 </html>
