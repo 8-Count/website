@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="The landing page">
+        <meta name="author" content="Joe Benassi">
+    
+        <title>8 Count</title>
+
+        <link href="http://bootswatch.com/superhero/bootstrap.min.css" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+        <link href="fonts/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+        <!--NAVBAR-->
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">8 Count</a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><span class="dropdown-item" href="#about">Concussion Test</span></li>
+                    <li><span class="dropdown-item" href="#about">Concussion Help</span></li>
+                    <li><span class="dropdown-item" href="#about">App Info</span></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="centered-body">
+            <!--CONNECTION TIMER-->
+            <p id="connection_timer"></p>
+
+            <!--CONNECTION STATUS ICON-->
+            <button type="button" onclick="connectButtonClicked()" class="btn-invis" >
+                <i id="connection_icon" class="fa fa-play fa-5x"></i>
+            </button>
+
+            <!--CONNECTION STATUS MESSAGE-->
+            <h3 id="connection_status">sample connection status</h3>
+            
+            <!--IMPACT HISTORY DROPDOWN NAV MENU-->
+            <div class="container" id="dropdown_menu_container">
+                <div class="dropdown" id="dropdown_menu">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                        View Impact History
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                        <li role="presentation" onclick="todayClicked()"><span class="dropdown-item">  Today</span></li>
+                        <li role="presentation" onclick="weekClicked()"><span tabindex="-1" class="dropdown-item">  This Week</span></li>
+                        <li role="presentation" onclick="allTimeClicked()"><span tabindex="-1" class="dropdown-item">  All Time</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery-1.11.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/functionlib.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+    </body>
+</html>
