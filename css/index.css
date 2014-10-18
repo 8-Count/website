@@ -1,0 +1,69 @@
+body, html {
+    height: 100%;
+    display: table; 
+    width: 100%;
+    font-size: 15px;
+}
+
+body {
+    padding-top: 3em;
+}
+
+.navbar-brand {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin: auto;
+}
+    
+.btn-invis {
+    background: transparent;
+    border: none !important;
+}
+
+.btn-invis:focus {
+    outline: none;   
+}
+
+.btn-invis:active {
+    color: #888;   
+}
+
+.centered-body {
+    display: table-cell; 
+    vertical-align: middle; 
+    horizontal-align: middle; 
+    text-align: center;
+    padding: 3.5em;
+}
+
+#connection_status {
+    margin-top: .3em;
+}
+
+#connection_icon {
+    font-size: 12em;   
+}
+
+#connection_timer {
+    margin-bottom: -.3em;   
+    font-size: 2em;
+}
+
+#dropdown_menu_container {
+    margin-top: 4em;
+}
+
+#dropdown_menu {
+    display: inline;   
+}
+
+.dropdown-item {
+    font-size: 1.5em;
+    margin-left: .8em;
+}
+
+#dropdownMenu1 {
+    font-size: 1.5em;
+}
